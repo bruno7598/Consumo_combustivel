@@ -28,11 +28,3 @@ for index, row in df_dados.iterrows():
     session.execute(sql)
     
 print("Fim da execução")
-    
-
-
-
-
-
-
-
