@@ -343,7 +343,7 @@ delimiter //
 CREATE TRIGGER trg_preco_Insert_AI AFTER INSERT ON preco_combustiveis
 	FOR EACH ROW
 		BEGIN
-            call InsereLogDados(current_timestamp);
+            call InsereLogPreco(current_timestamp);
 		END
 //
 
@@ -352,7 +352,7 @@ delimiter //
 CREATE TRIGGER trg_preco_Delete_AD AFTER DELETE ON preco_combustiveis
 	FOR EACH ROW
 		BEGIN
-            call InsereLogDados(current_timestamp);
+            call InsereLogPreco(current_timestamp);
 		END 
 //
 -- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
@@ -360,6 +360,6 @@ delimiter //
 CREATE TRIGGER trg_preco_Update_AU AFTER UPDATE ON preco_combustiveis
 	FOR EACH ROW
 		BEGIN
-            call InsereLogDados(current_timestamp);
+            call InsereLogPreco(current_timestamp);
         END;
 //
