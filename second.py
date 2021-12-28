@@ -8,12 +8,12 @@ from datetime import datetime
 import pandas as pd
 import numpy as np
 
-#campos a alterar
-# usuario = 
-# arquivo_parquet = 
+
+caminho_csv = "gs://arquivo_csv"
+caminho_parquet = "gs://arquivo_parquet"
 
 
-con = mysql.connector.connect(user='root', password='Eugostode@55', host='localhost', database='consumo_combustivel')
+con = mysql.connector.connect(user='root', password='projetoNatal', host='10.6.208.3', database='consumo_combustivel')
 cursor = con.cursor()
 
 query_2015 = "SELECT * FROM consumo_2015;"
@@ -60,22 +60,15 @@ df_total.drop(['id_total'], axis=1, inplace=True)
 
 spark = SparkSession.builder.appName("OTR").config("spark.sql.caseSensitive", "True").getOrCreate()
 
-# spark.conf.set("spark.sql.execution.arrow.enabled", "true")
-
-# df = spark.createDataFrame(df_total)
-
-
-df_total.to_csv(r"C:\Users\isa66\Desktop\Visualcode\.vscode\concat.csv", header=True)
+df_total.to_csv(f"{caminho_csv}/concat.csv", header=True)
 
 #Inicia sessão no spark
-
 
 df = spark.read.format("csv")\
     .option("header", "true")\
     .option("delimiter", ",")\
     .option("inferSchema", "true")\
-    .load(r"C:\Users\isa66\Desktop\Visualcode\.vscode\concat.csv")
-
+    .load(f"{caminho_csv}/concat.csv")
 
 
 converter_valor = lambda variavel: float(variavel.replace(",","."))
@@ -99,10 +92,4 @@ df_total = resultado.select(col("regiao_sigla")\
 ,col("valor_de_venda")\
 ,col("valor_de_compra")\
 ,col("bandeira"))
-df_total.write.parquet(r"C:\Users\isa66\Desktop\Visualcode\.vscode\total1_parquet")
-
-
-
-
-
-
+df_total.write.parquet(f"{caminho_parquet}/total_parquet")

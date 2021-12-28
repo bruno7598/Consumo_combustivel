@@ -2,27 +2,23 @@ from cassandra.cluster import Cluster
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import FloatType
-# import numpy as np
 import pandas as pd
 
+caminho_parquet = "gs://arquivo_parquet/total_parquet"
 
-
-clstr = Cluster(['34.151.227.87'], port=9042)
+clstr = Cluster()
 session = clstr.connect('analise_combustivel')
-
-
 
 spark = SparkSession.builder.appName("OTR").config("spark.sql.caseSensitive", "True").getOrCreate()
 
-df_total = spark.read.parquet(r"gs://dataproc-staging-sa-east1-38488625567-ytcttqkr/notebooks/total_parquet")
-a = df_total.filter("CNPJ_revenda != '0'").collect()
-b = pd.DataFrame(a)
-b.columns = ["regiao_sigla","estado_sigla","municipio","revenda","CNPJ_revenda","produto","data_da_coleta","valor_de_venda","valor_de_compra","bandeira"]
-# b.fillna(-1, inplace = True)
-print(b)
+df_total = spark.read.parquet(f"{caminho_parquet}")
 
-for index, row in b.iterrows():
-      
+lista_dados = df_total.filter("CNPJ_revenda != '0'").collect()
+df_dados = pd.DataFrame(lista_dados)
+df_dados.columns = ["regiao_sigla","estado_sigla","municipio","revenda","CNPJ_revenda","produto","data_da_coleta","valor_de_venda","valor_de_compra","bandeira"]
+
+for index, row in df_dados.iterrows():
+    
     if pd.isnull(row.valor_de_compra):
         valores = "(uuid(),'{}','{}','{}','{}','{}','{}','{}',{},'{}')".format(row.regiao_sigla,row.estado_sigla,row.municipio, row.revenda, row.CNPJ_revenda, row.produto, row.data_da_coleta, row.valor_de_venda, row.bandeira)
         sql = "INSERT INTO CONSUMO (id,regiao_sigla,estado_sigla,municipio, razao_social, cnpj, produto, data_da_coleta, valor_de_venda, bandeira) values "+ valores +";"
@@ -31,9 +27,10 @@ for index, row in b.iterrows():
         sql = "INSERT INTO CONSUMO (id,regiao_sigla,estado_sigla,municipio, razao_social, cnpj, produto, data_da_coleta, valor_de_venda, valor_de_compra, bandeira) values "+ valores +";"
     session.execute(sql)
     
+print("Fim da execução")
     
-print("SHOW!")
-   
+
+
 
 
 
