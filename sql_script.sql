@@ -302,26 +302,6 @@ CREATE TRIGGER trg_consumo_2015_Insert_AU AFTER UPDATE ON consumo_2015
 
 
 
--- CRIANDO AS TABELAS
-
-CREATE TABLE preco_combustiveis(
-	cod_pla int auto_increment primary key,
-	data_inicial text,
-	data_final text,
-	produto text,
-	num_postos_pesquisados text,
-	unid_medida text,
-	preco_medio_revenda text,
-	desvio_padrao_revenda text,
-	preco_minimo_revenda text,
-	preco_maximo_revenda text, 
-	margem_media_revenda text, 
-	coef_var_revenda text, 
-	preco_medio_dist text, 
-	desvio_padrao_dist text,
-      preco_min_dist text, 
-	preco_max_dist text);
-
 
 CREATE TABLE log_preco_combustivel (
     id_log int auto_increment primary key,
@@ -337,7 +317,7 @@ create procedure InsereLogPreco ( in datas datetime)
 //
 
 
--- TRIGGERS 2020
+-- TRIGGERS
 
 delimiter //
 CREATE TRIGGER trg_preco_Insert_AI AFTER INSERT ON preco_combustiveis
