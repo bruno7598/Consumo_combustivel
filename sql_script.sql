@@ -339,6 +339,6 @@ delimiter //
 CREATE TRIGGER trg_preco_Update_AU AFTER UPDATE ON preco_combustiveis
 	FOR EACH ROW
 		BEGIN
-            call InsereLogPreco(current_timestamp);
+            call InsereLogDados(current_timestamp);
         END;
 //

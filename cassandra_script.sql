@@ -21,3 +21,20 @@ CREATE TABLE IF NOT EXISTS CONSUMO (
 
 select * from consumo;
 
+CREATE TABLE preco_combustiveis(
+	cod_pla int auto_increment primary key,
+	data_inicial text,
+	data_final text,
+	produto text,
+	num_postos_pesquisados text,
+	unid_medida text,
+	preco_medio_revenda float,
+	desvio_padrao_revenda float,
+	preco_minimo_revenda float,
+	preco_maximo_revenda float, 
+	margem_media_revenda float, 
+	coef_var_revenda float, 
+	preco_medio_dist float, 
+	desvio_padrao_dist float,
+      preco_min_dist float, 
+	preco_max_dist float);
