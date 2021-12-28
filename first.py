@@ -1,14 +1,7 @@
-from pyspark import SparkContext, SparkConf
-from pyspark.sql import SparkSession
-from pyspark.sql import functions as B
-from pyspark.sql.types import FloatType
-from pyspark.sql.functions import col, count, regexp_extract
 import mysql.connector
 import pandas as pd
-import numpy as np
 
 caminho_planilha = "gs://dataproc-staging-sa-east1-38488625567-ytcttqkr/notebooks"
-
 
 if __name__ == "__main__":
 
@@ -374,9 +367,3 @@ if __name__ == "__main__":
     cursor.close()
     con.commit()
     con.close()
-    
-    
-    
-    
-    
-    
