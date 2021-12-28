@@ -21,42 +21,36 @@ query = cursor.execute(query_2015)
 query = cursor.fetchall()
 df_2015 = pd.DataFrame(query)
 
-print("Leu 2015")
 
 query_2016 = "select * from consumo_2016;"
 query = cursor.execute(query_2016)
 query = cursor.fetchall()
 df_2016 = pd.DataFrame(query)
 
-print("Leu 2016")
 
 query_2017 = "select * from consumo_2017;"
 query = cursor.execute(query_2017)
 query = cursor.fetchall()
 df_2017 = pd.DataFrame(query)
 
-print("Leu 2017")
 
 query_2018 = "select * from consumo_2018;"
 query = cursor.execute(query_2018)
 query = cursor.fetchall()
 df_2018 = pd.DataFrame(query)
 
-print("Leu 2018")
 
 query_2019 = "select * from consumo_2019;"
 query = cursor.execute(query_2019)
 query = cursor.fetchall()
 df_2019 = pd.DataFrame(query)
 
-print("Leu 2019")
 
 query_2020 = "select * from consumo_2020;"
 query = cursor.execute(query_2020)
 query = cursor.fetchall()
 df_2020 = pd.DataFrame(query)
 
-print("Leu 2020")
 
 cursor.close()
 con.commit()
@@ -68,15 +62,11 @@ df_total.columns = ["id_total","regiao_sigla","estado_sigla","municipio","revend
 
 df_total.drop(['id_total'], axis=1, inplace=True)
 
-print("dropou linha 0")
-
+#Inicia sessão no spark
 spark = SparkSession.builder.appName("OTR").config("spark.sql.caseSensitive", "True").getOrCreate()
 
 df_total.to_csv(f"{caminho_csv}/concat.csv", header=True)
 
-
-print("concatenou")
-#Inicia sessão no spark
 
 df = spark.read.format("csv")\
     .option("header", "true")\
@@ -90,9 +80,6 @@ udf_converter_valor = functions.udf(converter_valor,FloatType())
 
 resultado = df.withColumn("valor_de_venda", udf_converter_valor(df["valor_de_venda"]))
 resultado = resultado.withColumn("valor_de_compra", udf_converter_valor(resultado["valor_de_compra"]))
-
-resultado.printSchema()
-
 
 df_total = resultado.select(col("regiao_sigla")\
 ,col("estado_sigla")\
