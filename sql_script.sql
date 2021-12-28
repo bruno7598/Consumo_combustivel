@@ -300,25 +300,7 @@ CREATE TRIGGER trg_consumo_2015_Insert_AU AFTER UPDATE ON consumo_2015
         END;
 //
 
--- CRIANDO A TABELA PRECO_COMBUSTIVEIS
 
-CREATE TABLE preco_combustiveis(
-	cod_pla int auto_increment primary key,
-	data_inicial varchar (10),
-	data_final varchar (10),
-	produto varchar (25),
-	num_postos_pesquisados text,
-	unid_medida varchar (10),
-	preco_medio_revenda text,
-	desvio_padrao_revenda text,
-	preco_minimo_revenda text,
-	preco_maximo_revenda text, 
-	margem_media_revenda text, 
-	coef_var_revenda text, 
-	preco_medio_dist text, 
-	desvio_padrao_dist text,
-      preco_min_dist text, 
-	preco_max_dist text)
 
 
 CREATE TABLE log_preco_combustivel (
