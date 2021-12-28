@@ -300,25 +300,25 @@ CREATE TRIGGER trg_consumo_2015_Insert_AU AFTER UPDATE ON consumo_2015
         END;
 //
 
--- CRIANDO AS TABELAS
+-- CRIANDO A TABELA
 
 CREATE TABLE preco_combustiveis(
 	cod_pla int auto_increment primary key,
 	data_inicial varchar (10),
 	data_final varchar (10),
 	produto varchar (25),
-	num_postos_pesquisados float,
+	num_postos_pesquisados text,
 	unid_medida varchar (10),
-	preco_medio_revenda float,
-	desvio_padrao_revenda float,
-	preco_minimo_revenda float,
-	preco_maximo_revenda float, 
-	margem_media_revenda float, 
-	coef_var_revenda float, 
-	preco_medio_dist float, 
-	desvio_padrao_dist float,
-      preco_min_dist float, 
-	preco_max_dist float)
+	preco_medio_revenda text,
+	desvio_padrao_revenda text,
+	preco_minimo_revenda text,
+	preco_maximo_revenda text, 
+	margem_media_revenda text, 
+	coef_var_revenda text, 
+	preco_medio_dist text, 
+	desvio_padrao_dist text,
+      preco_min_dist text, 
+	preco_max_dist text)
 
 
 CREATE TABLE log_preco_combustivel (
@@ -335,13 +335,13 @@ create procedure InsereLogPreco ( in datas datetime)
 //
 
 
--- TRIGGERS 2020
+-- TRIGGERS
 
 delimiter //
 CREATE TRIGGER trg_preco_Insert_AI AFTER INSERT ON preco_combustiveis
 	FOR EACH ROW
 		BEGIN
-            call InsereLogDados(current_timestamp);
+            call InsereLogPreco(current_timestamp);
 		END
 //
 
@@ -350,7 +350,7 @@ delimiter //
 CREATE TRIGGER trg_preco_Delete_AD AFTER DELETE ON preco_combustiveis
 	FOR EACH ROW
 		BEGIN
-            call InsereLogDados(current_timestamp);
+            call InsereLogPreco(current_timestamp);
 		END 
 //
 -- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
@@ -358,6 +358,6 @@ delimiter //
 CREATE TRIGGER trg_preco_Update_AU AFTER UPDATE ON preco_combustiveis
 	FOR EACH ROW
 		BEGIN
-            call InsereLogDados(current_timestamp);
+            call InsereLogPreco(current_timestamp);
         END;
 //
