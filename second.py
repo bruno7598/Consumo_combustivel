@@ -20,7 +20,7 @@ query_2015 = "SELECT * FROM consumo_2015;"
 a = cursor.execute(query_2015)
 a = cursor.fetchall()
 df_2015 = pd.DataFrame(a)
-print("tamo aqui 23")
+
 
 query_2016 = "select * from consumo_2016;"
 b = cursor.execute(query_2016)
@@ -41,7 +41,7 @@ query_2019 = "select * from consumo_2019;"
 e = cursor.execute(query_2019)
 e = cursor.fetchall()
 df_2019 = pd.DataFrame(e)
-print("tamo aqui 44")
+
 
 query_2020 = "select * from consumo_2020;"
 f = cursor.execute(query_2020)
@@ -70,10 +70,8 @@ df = spark.read.format("csv")\
     .option("inferSchema", "true")\
     .load(f"{caminho_csv}/concat.csv")
 
-
 converter_valor = lambda variavel: float(variavel.replace(",","."))
 udf_converter_valor = B.udf(converter_valor,FloatType())
-
 
 
 resultado = df.withColumn("valor_de_venda", udf_converter_valor(df["valor_de_venda"]))
@@ -93,3 +91,5 @@ df_total = resultado.select(col("regiao_sigla")\
 ,col("valor_de_compra")\
 ,col("bandeira"))
 df_total.write.parquet(f"{caminho_parquet}/total_parquet")
+
+print("Fim da execução")
