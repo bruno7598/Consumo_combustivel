@@ -17,36 +17,36 @@ con = mysql.connector.connect(user='root', password='projetoNatal', host='10.6.2
 cursor = con.cursor()
 
 query_2015 = "SELECT * FROM consumo_2015;"
-a = cursor.execute(query_2015)
-a = cursor.fetchall()
-df_2015 = pd.DataFrame(a)
+query = cursor.execute(query_2015)
+query = cursor.fetchall()
+df_2015 = pd.DataFrame(query)
 
 
 query_2016 = "select * from consumo_2016;"
-b = cursor.execute(query_2016)
-b = cursor.fetchall()
-df_2016 = pd.DataFrame(b)
+query = cursor.execute(query_2016)
+query = cursor.fetchall()
+df_2016 = pd.DataFrame(query)
 
 query_2017 = "select * from consumo_2017;"
-c = cursor.execute(query_2017)
-c = cursor.fetchall()
-df_2017 = pd.DataFrame(c)
+query = cursor.execute(query_2017)
+query = cursor.fetchall()
+df_2017 = pd.DataFrame(query)
 
 query_2018 = "select * from consumo_2018;"
-d = cursor.execute(query_2018)
-d = cursor.fetchall()
-df_2018 = pd.DataFrame(d)
+query = cursor.execute(query_2018)
+query = cursor.fetchall()
+df_2018 = pd.DataFrame(query)
 
 query_2019 = "select * from consumo_2019;"
-e = cursor.execute(query_2019)
-e = cursor.fetchall()
-df_2019 = pd.DataFrame(e)
+query = cursor.execute(query_2019)
+query = cursor.fetchall()
+df_2019 = pd.DataFrame(query)
 
 
 query_2020 = "select * from consumo_2020;"
-f = cursor.execute(query_2020)
-f = cursor.fetchall()
-df_2020 = pd.DataFrame(f)
+query = cursor.execute(query_2020)
+query = cursor.fetchall()
+df_2020 = pd.DataFrame(query)
 
 cursor.close()
 con.commit()
