@@ -6,7 +6,7 @@ import pandas as pd
 
 caminho_parquet = "gs://arquivo_parquet/total_parquet"
 
-clstr = Cluster()
+clstr = Cluster(['34.151.227.87'], port=9042)
 session = clstr.connect('analise_combustivel')
 
 spark = SparkSession.builder.appName("OTR").config("spark.sql.caseSensitive", "True").getOrCreate()
