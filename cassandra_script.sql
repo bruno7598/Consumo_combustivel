@@ -19,4 +19,5 @@ CREATE TABLE IF NOT EXISTS CONSUMO (
 
 
 
+select * from consumo;
 
