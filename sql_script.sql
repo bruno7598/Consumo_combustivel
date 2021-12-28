@@ -307,7 +307,6 @@ CREATE TABLE log_preco_combustivel (
     id_log int auto_increment primary key,
     datas datetime);
 
-
 -- CREATE PROCEDURE PARA LOG
 delimiter //
 create procedure InsereLogPreco ( in datas datetime)
