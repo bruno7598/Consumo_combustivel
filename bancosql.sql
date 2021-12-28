@@ -1,27 +1,132 @@
-CREATE DATABASES CONSUMO_COMBUSTIVEL;
+CREATE DATABASE consumo_combustivel;
+
+-- CRIANDO AS TABELAS NO MYSQL
+
+CREATE TABLE log_combustivel (
+    id_log int auto_increment primary key,
+    datas datetime,
+    CNPJ_revenda text,
+    revendedor text,
+    valor_da_revenda text);
+
+CREATE TABLE consumo_2015 (
+    id_2015 int not null auto_increment primary key,
+    regiao_sigla text,
+    estado_sigla text,
+    municipio text,
+    revenda text,
+    CNPJ_revenda text,
+    nome_da_rua text,
+    numero_rua text,
+    complemento text,
+    bairro text,
+    cep text,
+    produto text,
+    data_da_coleta text,
+    valor_de_venda text,
+    valor_de_compra text,
+    unidade_de_medida text,
+    bandeira text);
+
+CREATE TABLE consumo_2016 (
+    id_2016 int not null auto_increment primary key,
+    regiao_sigla text,
+    estado_sigla text,
+    municipio text,
+    revenda text,
+    CNPJ_revenda text,
+    nome_da_rua text,
+    numero_rua text,
+    complemento text,
+    bairro text,
+    cep text,
+    produto text,
+    data_da_coleta text,
+    valor_de_venda text,
+    valor_de_compra text,
+    unidade_de_medida text,
+    bandeira text);
+
+CREATE TABLE consumo_2017 (
+    id_2017 int not null auto_increment primary key,
+    regiao_sigla text,
+    estado_sigla text,
+    municipio text,
+    revenda text,
+    CNPJ_revenda text,
+    nome_da_rua text,
+    numero_rua text,
+    complemento text,
+    bairro text,
+    cep text,
+    produto text,
+    data_da_coleta text,
+    valor_de_venda text,
+    valor_de_compra text,
+    unidade_de_medida text,
+    bandeira text);
 
 
+CREATE TABLE consumo_2018 (
+    id_2018 int not null auto_increment primary key,
+    regiao_sigla text,
+    estado_sigla text,
+    municipio text,
+    revenda text,
+    CNPJ_revenda text,
+    nome_da_rua text,
+    numero_rua text,
+    complemento text,
+    bairro text,
+    cep text,
+    produto text,
+    data_da_coleta text,
+    valor_de_venda text,
+    valor_de_compra text,
+    unidade_de_medida text,
+    bandeira text);
 
-"""
 
-Regiao - Sigla
-;Estado - Sigla
-;Municipio
-;Revenda
-;CNPJ da Revenda
-;Nome da Rua
-;Numero Rua
-;Complemento 
-;Bairro 
-;Cep
-;Produto
-;Data da Coleta
-;Valor de Venda
-;Valor de Compra
-;Unidade de Medida
-;Bandeira
+CREATE TABLE consumo_2019 (
+	id_2019 int not null auto_increment primary key,
+    regiao_sigla text,
+    estado_sigla text,
+    municipio text,
+    revenda text,
+    CNPJ_revenda text,
+    nome_da_rua text,
+    numero_rua text,
+    complemento text,
+    bairro text,
+    cep text,
+    produto text,
+    data_da_coleta text,
+    valor_de_venda text,
+    valor_de_compra text,
+    unidade_de_medida text,
+    bandeira text);
 
-"""
+
+CREATE TABLE consumo_2020 (
+    id_2020 int not null auto_increment primary key,
+    regiao_sigla text,
+    estado_sigla text,
+    municipio text,
+    revenda text,
+    CNPJ_revenda text,
+    nome_da_rua text,
+    numero_rua text,
+    complemento text,
+    bairro text,
+    cep text,
+    produto text,
+    data_da_coleta text,
+    valor_de_venda text,
+    valor_de_compra text,
+    unidade_de_medida text,
+    bandeira text);
+
+
 -- CREATE PROCEDURE PARA LOG
 delimiter //
 create procedure InsereLogDados ( in datas datetime, in cnpj text, in revendedor text, in valor_revenda text)
@@ -193,143 +298,3 @@ CREATE TRIGGER trg_consumo_2015_Insert_AU AFTER UPDATE ON CONSUMO_2015
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
         END;
 //
-
-
-
-
-
--- CRIANDO AS TABELAS NO MYSQL
-
-
-create table log_combustivel (
-	id_log int auto_increment primary key,
-    datas datetime,
-    CNPJ_revenda text,
-    revendedor text,
-    valor_da_revenda text);
-
-
-
-CREATE TABLE CONSUMO_2015 (
-	id_2015 int not null auto_increment primary key,
-    regiao_sigla text,
-    estado_sigla text,
-    municipio text,
-    revenda text,
-    CNPJ_revenda text,
-    nome_da_rua text,
-    numero_rua text,
-    complemento text,
-    bairro text,
-    cep text,
-    produto text,
-    data_da_coleta text,
-    valor_de_venda text,
-    valor_de_compra text,
-    unidade_de_medida text,
-    bandeira text);
-
-
-
-
-CREATE TABLE CONSUMO_2016 (
-	id_2016 int not null auto_increment primary key,
-    regiao_sigla text,
-    estado_sigla text,
-    municipio text,
-    revenda text,
-    CNPJ_revenda text,
-    nome_da_rua text,
-    numero_rua text,
-    complemento text,
-    bairro text,
-    cep text,
-    produto text,
-    data_da_coleta text,
-    valor_de_venda text,
-    valor_de_compra text,
-    unidade_de_medida text,
-    bandeira text);
-
-
-
-CREATE TABLE CONSUMO_2017 (
-	id_2017 int not null auto_increment primary key,
-    regiao_sigla text,
-    estado_sigla text,
-    municipio text,
-    revenda text,
-    CNPJ_revenda text,
-    nome_da_rua text,
-    numero_rua text,
-    complemento text,
-    bairro text,
-    cep text,
-    produto text,
-    data_da_coleta text,
-    valor_de_venda text,
-    valor_de_compra text,
-    unidade_de_medida text,
-    bandeira text);
-
-
-CREATE TABLE CONSUMO_2018 (
-	id_2018 int not null auto_increment primary key,
-    regiao_sigla text,
-    estado_sigla text,
-    municipio text,
-    revenda text,
-    CNPJ_revenda text,
-    nome_da_rua text,
-    numero_rua text,
-    complemento text,
-    bairro text,
-    cep text,
-    produto text,
-    data_da_coleta text,
-    valor_de_venda text,
-    valor_de_compra text,
-    unidade_de_medida text,
-    bandeira text);
-
-
-
-CREATE TABLE CONSUMO_2019 (
-	id_2019 int not null auto_increment primary key,
-    regiao_sigla text,
-    estado_sigla text,
-    municipio text,
-    revenda text,
-    CNPJ_revenda text,
-    nome_da_rua text,
-    numero_rua text,
-    complemento text,
-    bairro text,
-    cep text,
-    produto text,
-    data_da_coleta text,
-    valor_de_venda text,
-    valor_de_compra text,
-    unidade_de_medida text,
-    bandeira text);
-
-
-
-CREATE TABLE CONSUMO_2020 (
-	id_2020 int not null auto_increment primary key,
-    regiao_sigla text,
-    estado_sigla text,
-    municipio text,
-    revenda text,
-    CNPJ_revenda text,
-    nome_da_rua text,
-    numero_rua text,
-    complemento text,
-    bairro text,
-    cep text,
-    produto text,
-    data_da_coleta text,
-    valor_de_venda text,
-    valor_de_compra text,
-    unidade_de_medida text,
-    bandeira text);
