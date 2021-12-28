@@ -300,7 +300,7 @@ CREATE TRIGGER trg_consumo_2015_Insert_AU AFTER UPDATE ON consumo_2015
         END;
 //
 
--- CRIANDO A TABELA
+-- CRIANDO A TABELA PRECO_COMBUSTIVEIS
 
 CREATE TABLE preco_combustiveis(
 	cod_pla int auto_increment primary key,

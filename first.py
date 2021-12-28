@@ -441,7 +441,7 @@ if __name__ == "__main__":
         cursor.close()
         con.commit()
         con.close()
-
+        
         print("Fim da inserção tabela Preços")
         
     except Exception as e:
