@@ -139,7 +139,7 @@ create procedure InsereLogDados ( in datas datetime, in cnpj text, in revendedor
 -- TRIGGERS 2020
 
 delimiter //
-CREATE TRIGGER trg_consumo_2020_Insert_AI AFTER INSERT ON CONSUMO_2020
+CREATE TRIGGER trg_consumo_2020_Insert_AI AFTER INSERT ON consumo_2020
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -147,7 +147,7 @@ CREATE TRIGGER trg_consumo_2020_Insert_AI AFTER INSERT ON CONSUMO_2020
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2020_Insert_AD AFTER DELETE ON CONSUMO_2020
+CREATE TRIGGER trg_consumo_2020_Insert_AD AFTER DELETE ON consumo_2020
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,old.CNPJ_revenda,old.revenda,old.valor_de_venda);
@@ -155,7 +155,7 @@ CREATE TRIGGER trg_consumo_2020_Insert_AD AFTER DELETE ON CONSUMO_2020
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2020_Insert_AU AFTER UPDATE ON CONSUMO_2020
+CREATE TRIGGER trg_consumo_2020_Insert_AU AFTER UPDATE ON consumo_2020
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -165,7 +165,7 @@ CREATE TRIGGER trg_consumo_2020_Insert_AU AFTER UPDATE ON CONSUMO_2020
 -- TRIGGERS 2019
 
 delimiter //
-CREATE TRIGGER trg_consumo_2019_Insert_AI AFTER INSERT ON CONSUMO_2019
+CREATE TRIGGER trg_consumo_2019_Insert_AI AFTER INSERT ON consumo_2019
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -173,7 +173,7 @@ CREATE TRIGGER trg_consumo_2019_Insert_AI AFTER INSERT ON CONSUMO_2019
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2019_Insert_AD AFTER DELETE ON CONSUMO_2019
+CREATE TRIGGER trg_consumo_2019_Insert_AD AFTER DELETE ON consumo_2019
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,old.CNPJ_revenda,old.revenda,old.valor_de_venda);
@@ -181,7 +181,7 @@ CREATE TRIGGER trg_consumo_2019_Insert_AD AFTER DELETE ON CONSUMO_2019
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2019_Insert_AU AFTER UPDATE ON CONSUMO_2019
+CREATE TRIGGER trg_consumo_2019_Insert_AU AFTER UPDATE ON consumo_2019
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -192,7 +192,7 @@ CREATE TRIGGER trg_consumo_2019_Insert_AU AFTER UPDATE ON CONSUMO_2019
 
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um insert na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2018_Insert_AI AFTER INSERT ON CONSUMO_2018
+CREATE TRIGGER trg_consumo_2018_Insert_AI AFTER INSERT ON consumo_2018
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -200,7 +200,7 @@ CREATE TRIGGER trg_consumo_2018_Insert_AI AFTER INSERT ON CONSUMO_2018
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2018_Insert_AD AFTER DELETE ON CONSUMO_2018
+CREATE TRIGGER trg_consumo_2018_Insert_AD AFTER DELETE ON consumo_2018
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,old.CNPJ_revenda,old.revenda,old.valor_de_venda);
@@ -208,7 +208,7 @@ CREATE TRIGGER trg_consumo_2018_Insert_AD AFTER DELETE ON CONSUMO_2018
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2018_Insert_AU AFTER UPDATE ON CONSUMO_2018
+CREATE TRIGGER trg_consumo_2018_Insert_AU AFTER UPDATE ON consumo_2018
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -220,7 +220,7 @@ CREATE TRIGGER trg_consumo_2018_Insert_AU AFTER UPDATE ON CONSUMO_2018
 
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um insert na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2017_Insert_AI AFTER INSERT ON CONSUMO_2017
+CREATE TRIGGER trg_consumo_2017_Insert_AI AFTER INSERT ON consumo_2017
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -228,7 +228,7 @@ CREATE TRIGGER trg_consumo_2017_Insert_AI AFTER INSERT ON CONSUMO_2017
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2017_Insert_AD AFTER DELETE ON CONSUMO_2017
+CREATE TRIGGER trg_consumo_2017_Insert_AD AFTER DELETE ON consumo_2017
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,old.CNPJ_revenda,old.revenda,old.valor_de_venda);
@@ -236,7 +236,7 @@ CREATE TRIGGER trg_consumo_2017_Insert_AD AFTER DELETE ON CONSUMO_2017
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2017_Insert_AU AFTER UPDATE ON CONSUMO_2017
+CREATE TRIGGER trg_consumo_2017_Insert_AU AFTER UPDATE ON consumo_2017
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -247,7 +247,7 @@ CREATE TRIGGER trg_consumo_2017_Insert_AU AFTER UPDATE ON CONSUMO_2017
 
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um insert na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2016_Insert_AI AFTER INSERT ON CONSUMO_2016
+CREATE TRIGGER trg_consumo_2016_Insert_AI AFTER INSERT ON consumo_2016
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -255,7 +255,7 @@ CREATE TRIGGER trg_consumo_2016_Insert_AI AFTER INSERT ON CONSUMO_2016
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2016_Insert_AD AFTER DELETE ON CONSUMO_2016
+CREATE TRIGGER trg_consumo_2016_Insert_AD AFTER DELETE ON consumo_2016
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,old.CNPJ_revenda,old.revenda,old.valor_de_venda);
@@ -263,7 +263,7 @@ CREATE TRIGGER trg_consumo_2016_Insert_AD AFTER DELETE ON CONSUMO_2016
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2016_Insert_AU AFTER UPDATE ON CONSUMO_2016
+CREATE TRIGGER trg_consumo_2016_Insert_AU AFTER UPDATE ON consumo_2016
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -276,7 +276,7 @@ CREATE TRIGGER trg_consumo_2016_Insert_AU AFTER UPDATE ON CONSUMO_2016
 
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um insert na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2015_Insert_AI AFTER INSERT ON CONSUMO_2015
+CREATE TRIGGER trg_consumo_2015_Insert_AI AFTER INSERT ON consumo_2015
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
@@ -284,7 +284,7 @@ CREATE TRIGGER trg_consumo_2015_Insert_AI AFTER INSERT ON CONSUMO_2015
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2015_Insert_AD AFTER DELETE ON CONSUMO_2015
+CREATE TRIGGER trg_consumo_2015_Insert_AD AFTER DELETE ON consumo_2015
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,old.CNPJ_revenda,old.revenda,old.valor_de_venda);
@@ -292,7 +292,7 @@ CREATE TRIGGER trg_consumo_2015_Insert_AD AFTER DELETE ON CONSUMO_2015
 //
 #trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
 delimiter //
-CREATE TRIGGER trg_consumo_2015_Insert_AU AFTER UPDATE ON CONSUMO_2015
+CREATE TRIGGER trg_consumo_2015_Insert_AU AFTER UPDATE ON consumo_2015
 	FOR EACH ROW
 		BEGIN
             call InsereLogDados(current_timestamp,new.CNPJ_revenda,new.revenda,new.valor_de_venda);
