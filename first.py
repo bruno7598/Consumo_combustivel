@@ -363,7 +363,7 @@ if __name__ == "__main__":
             valores = "('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15])  
             sql = "INSERT INTO consumo_2020 (regiao_sigla,estado_sigla,municipio,revenda,CNPJ_revenda,nome_da_rua,numero_rua,complemento,bairro,cep,produto,data_da_coleta,valor_de_venda,valor_de_compra,unidade_de_medida,bandeira) values "+valores+";"
             cursor.execute(sql)
-            
+
 
         print("fim da inserção 2020")
         
@@ -375,7 +375,7 @@ if __name__ == "__main__":
         # CONEXAO COM SPARK
         spark = SparkSession.builder.appName("OTR").config("spark.sql.caseSensitive", "True").getOrCreate()
 
-        # LE O ARQUIVO CSV      
+        # LE ARQUIVO CSV      
         df_preco = spark.read.format("csv")\
         .option("header", "true")\
         .option("delimiter", ";")\
