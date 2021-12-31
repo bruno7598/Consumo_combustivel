@@ -1,27 +1,26 @@
 -- SCRIPT CASSANDRA
+
 CREATE KEYSPACE IF NOT EXISTS analise_combustivel 
     WITH replication = { 'class' : 'SimpleStrategy', 'replication_factor' : 1};
 
 USE analise_combustivel;
 
 CREATE TABLE IF NOT EXISTS CONSUMO (
-	id int not null auto_increment primary key,
-    regiao_sigla text,
-    estado_sigla text,
-    municipio text,
-    razao_social text,
-    cnpj text,
-    produto text,
-    data_da_coleta text,
-    valor_de_venda text,
-    valor_de_compra text,
-    bandeira text);
+	id int auto_increment primary key,
+	regiao_sigla text,
+	estado_sigla text,
+	municipio text,
+	razao_social text,
+	cnpj text,
+	produto text,
+	data_da_coleta text,
+	valor_de_venda text,
+	valor_de_compra text,
+	bandeira text);
 
+SELECT * FROM CONSUMO;
 
-
-select * from consumo;
-
-CREATE TABLE preco_combustiveis(
+CREATE TABLE IF NOT EXISTS preco_combustiveis(
 	cod_pla int auto_increment primary key,
 	data_inicial text,
 	data_final text,
@@ -36,5 +35,7 @@ CREATE TABLE preco_combustiveis(
 	coef_var_revenda float, 
 	preco_medio_dist float, 
 	desvio_padrao_dist float,
-      preco_min_dist float, 
+	preco_min_dist float, 
 	preco_max_dist float);
+	
+SELECT * FROM preco_combustiveis;
