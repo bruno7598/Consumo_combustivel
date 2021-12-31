@@ -375,7 +375,7 @@ if __name__ == "__main__":
         # CONEXAO COM SPARK
         spark = SparkSession.builder.appName("OTR").config("spark.sql.caseSensitive", "True").getOrCreate()
 
-        # LE ARQUIVO CSV      
+        # LE O ARQUIVO CSV      
         df_preco = spark.read.format("csv")\
         .option("header", "true")\
         .option("delimiter", ";")\
