@@ -6,7 +6,7 @@ USE consumo_combustivel;
 
 -- CRIANDO AS TABELAS NO MYSQL
 
-CREATE TABLE IF NOT EXISTS log_combustivel (
+CREATE TABLE IF NOT EXISTS log_combustivel(
     id_log int auto_increment primary key,
     datas datetime,
     CNPJ_revenda text,
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS log_combustivel (
     
 SELECT * FROM log_combustivel;
 
-CREATE TABLE IF NOT EXISTS consumo_2015 (
+CREATE TABLE IF NOT EXISTS consumo_2015(
     id_2015 int auto_increment primary key,
     regiao_sigla text,
     estado_sigla text,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS consumo_2015 (
     
 SELECT * FROM consumo_2015;
 
-CREATE TABLE IF NOT EXISTS consumo_2016 (
+CREATE TABLE IF NOT EXISTS consumo_2016(
     id_2016 int auto_increment primary key,
     regiao_sigla text,
     estado_sigla text,
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS consumo_2016 (
    
 SELECT * FROM consumo_2016;
 
-CREATE TABLE consumo_2017 (
+CREATE TABLE consumo_2017(
     id_2017 int auto_increment primary key,
     regiao_sigla text,
     estado_sigla text,
@@ -78,7 +78,7 @@ CREATE TABLE consumo_2017 (
 
 SELECT * FROM consumo_2017;
 
-CREATE TABLE consumo_2018 (
+CREATE TABLE consumo_2018(
     id_2018 int auto_increment primary key,
     regiao_sigla text,
     estado_sigla text,
@@ -99,7 +99,7 @@ CREATE TABLE consumo_2018 (
 
 SELECT * FROM consumo_2018;
 
-CREATE TABLE consumo_2019 (
+CREATE TABLE consumo_2019(
     id_2019 int auto_increment primary key,
     regiao_sigla text,
     estado_sigla text,
@@ -120,7 +120,7 @@ CREATE TABLE consumo_2019 (
 
 SELECT * FROM consumo_2019;
 
-CREATE TABLE consumo_2020 (
+CREATE TABLE consumo_2020(
     id_2020 int auto_increment primary key,
     regiao_sigla text,
     estado_sigla text,
@@ -217,7 +217,7 @@ CREATE TRIGGER trg_consumo_2019_AU AFTER UPDATE ON consumo_2019
 
 -- TRIGGERS 2018
 
--- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela consumo_2019
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela consumo_2018
 
 delimiter //
 CREATE TRIGGER trg_consumo_2018_AI AFTER INSERT ON consumo_2018
@@ -249,7 +249,7 @@ CREATE TRIGGER trg_consumo_2018_AU AFTER UPDATE ON consumo_2018
 
 -- TRIGGERS 2017
 
--- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela consumo_2018
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela consumo_2017
 
 delimiter //
 CREATE TRIGGER trg_consumo_2017_AI AFTER INSERT ON consumo_2017
@@ -281,7 +281,7 @@ CREATE TRIGGER trg_consumo_2017_AU AFTER UPDATE ON consumo_2017
 
 -- TRIGGERS 2016
 
--- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela consumo_2017
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela consumo_2016
 
 delimiter //
 CREATE TRIGGER trg_consumo_2016_AI AFTER INSERT ON consumo_2016
@@ -313,7 +313,7 @@ CREATE TRIGGER trg_consumo_2016_AU AFTER UPDATE ON consumo_2016
 
 -- TRIGGERS 2015
 
--- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela consumo_2016
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela consumo_2015
 
 delimiter //
 CREATE TRIGGER trg_consumo_2015_AI AFTER INSERT ON consumo_2015
