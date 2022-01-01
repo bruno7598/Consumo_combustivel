@@ -153,7 +153,7 @@ create procedure InsereLogDados (in datas datetime, in cnpj text, in revendedor 
 
 -- TRIGGERS 2020
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um insert na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2020_AI AFTER INSERT ON consumo_2020
@@ -163,7 +163,7 @@ CREATE TRIGGER trg_consumo_2020_AI AFTER INSERT ON consumo_2020
 		END
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um delete na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2020_AD AFTER DELETE ON consumo_2020
@@ -173,7 +173,7 @@ CREATE TRIGGER trg_consumo_2020_AD AFTER DELETE ON consumo_2020
 		END 
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um update na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2020_AU AFTER UPDATE ON consumo_2020
@@ -185,7 +185,7 @@ CREATE TRIGGER trg_consumo_2020_AU AFTER UPDATE ON consumo_2020
 
 -- TRIGGERS 2019
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um insert na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2019_AI AFTER INSERT ON consumo_2019
@@ -195,7 +195,7 @@ CREATE TRIGGER trg_consumo_2019_AI AFTER INSERT ON consumo_2019
 		END
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um delete na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2019_AD AFTER DELETE ON consumo_2019
@@ -205,7 +205,7 @@ CREATE TRIGGER trg_consumo_2019_AD AFTER DELETE ON consumo_2019
 		END 
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um update na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2019_AU AFTER UPDATE ON consumo_2019
@@ -217,7 +217,7 @@ CREATE TRIGGER trg_consumo_2019_AU AFTER UPDATE ON consumo_2019
 
 -- TRIGGERS 2018
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um insert na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2018_AI AFTER INSERT ON consumo_2018
@@ -227,7 +227,7 @@ CREATE TRIGGER trg_consumo_2018_AI AFTER INSERT ON consumo_2018
 		END
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um delete na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2018_AD AFTER DELETE ON consumo_2018
@@ -237,7 +237,7 @@ CREATE TRIGGER trg_consumo_2018_AD AFTER DELETE ON consumo_2018
 		END 
 //
 
--- Ttrigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
+-- Ttrigger que insere uma ocorrencia na tabela log_combustivel quando existe um update na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2018_AU AFTER UPDATE ON consumo_2018
@@ -249,7 +249,7 @@ CREATE TRIGGER trg_consumo_2018_AU AFTER UPDATE ON consumo_2018
 
 -- TRIGGERS 2017
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um insert na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2017_AI AFTER INSERT ON consumo_2017
@@ -259,7 +259,7 @@ CREATE TRIGGER trg_consumo_2017_AI AFTER INSERT ON consumo_2017
 		END
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um delete na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2017_AD AFTER DELETE ON consumo_2017
@@ -269,7 +269,7 @@ CREATE TRIGGER trg_consumo_2017_AD AFTER DELETE ON consumo_2017
 		END 
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um update na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2017_AU AFTER UPDATE ON consumo_2017
@@ -281,7 +281,7 @@ CREATE TRIGGER trg_consumo_2017_AU AFTER UPDATE ON consumo_2017
 
 -- TRIGGERS 2016
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um insert na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2016_AI AFTER INSERT ON consumo_2016
@@ -291,7 +291,7 @@ CREATE TRIGGER trg_consumo_2016_AI AFTER INSERT ON consumo_2016
 		END
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um delete na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2016_AD AFTER DELETE ON consumo_2016
@@ -301,7 +301,7 @@ CREATE TRIGGER trg_consumo_2016_AD AFTER DELETE ON consumo_2016
 		END 
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um update na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2016_AU AFTER UPDATE ON consumo_2016
@@ -313,7 +313,7 @@ CREATE TRIGGER trg_consumo_2016_AU AFTER UPDATE ON consumo_2016
 
 -- TRIGGERS 2015
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um insert na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um insert na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2015_AI AFTER INSERT ON consumo_2015
@@ -323,7 +323,7 @@ CREATE TRIGGER trg_consumo_2015_AI AFTER INSERT ON consumo_2015
 		END
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um delete na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um delete na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2015_AD AFTER DELETE ON consumo_2015
@@ -333,7 +333,7 @@ CREATE TRIGGER trg_consumo_2015_AD AFTER DELETE ON consumo_2015
 		END 
 //
 
--- Trigger que insere uma ocorrencia na tabela logs_dados quando existe um update na tabela dados
+-- Trigger que insere uma ocorrencia na tabela log_combustivel quando existe um update na tabela dados
 
 delimiter //
 CREATE TRIGGER trg_consumo_2015_AU AFTER UPDATE ON consumo_2015
