@@ -5,7 +5,7 @@ CREATE KEYSPACE IF NOT EXISTS analise_combustivel
 
 USE analise_combustivel;
 
-CREATE TABLE IF NOT EXISTS CONSUMO (
+CREATE TABLE IF NOT EXISTS CONSUMO(
 	id int auto_increment primary key,
 	regiao_sigla text,
 	estado_sigla text,
