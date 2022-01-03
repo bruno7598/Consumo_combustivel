@@ -1,3 +1,11 @@
+# Desafio Final de Ano - SoulCode Academy - Engenharia de Dados
+Aurélia Covre / 
+Bruno Miranda / 
+João Victor Guimarães / 
+Leila Roque / 
+Thaís Aguiar  
+
+
 Localize arquivos representando dados exportados de diferentes  databases da mesma área (Saúde, Educação, Telefonia, Energia, Petróleo e Gás, Indústria e Comércio, etc), insira em um banco relacional, extraia padronize e adicione todos os dados a um único db não relacional, a seguir faça um código em python para a transição de dados de um banco para outro e que apresente as respostas das questões que seguem:
 
 - Quais os valores de dados totais no banco?
