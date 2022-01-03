@@ -14,8 +14,6 @@ if __name__ == "__main__":
         # CONEXAO COM CASSANDRA
         clstr = Cluster(['34.151.227.87'], port=9042)
         session = clstr.connect('analise_combustivel')
-
-        print("cassandra ok")
                 
             
         # CONEXAO COM SPARK
