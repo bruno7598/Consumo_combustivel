@@ -20,5 +20,5 @@ Ao final cada equipe deve enviar:
 -- Atividade Realizada em NUVEM!
 
 
-Foi realizada a análise de preço de compra e venda em postos de combustíveis no Brasil
-Dados da ANP - https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-revenda-e-de-distribuicao-combustiveis/serie-historica-do-levantamento-de-precos
+Foi realizada a análise de preço de compra e venda em postos de combustíveis no Brasil - 
+Dados da ANP - https://dados.gov.br/dataset/serie-historica-de-precos-de-combustiveis-por-revenda
