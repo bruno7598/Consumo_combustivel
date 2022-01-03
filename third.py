@@ -16,12 +16,6 @@ if __name__ == "__main__":
         session = clstr.connect('analise_combustivel')
 
         print("cassandra ok")
-        
-        for index, row in df_preco.iterrows():
-            valores = "(uuid(),'{}','{}','{}','{}','{}',{},{},{},{},{},{},{},{},{},{})".format(row.data_inicial,row.data_final, row.produto, row.num_postos_pesquisados, row.unid_medida, row.preco_medio_revenda, row.desvio_padrao_revenda, row.preco_minimo_revenda, row.preco_maximo_revenda, row.margem_media_revenda, row.coef_var_revenda, row.preco_medio_dist, row.desvio_padrao_dist, row.preco_min_dist, row.preco_max_dist)
-            query = "INSERT INTO preco_combustiveis (cod_pla,data_inicial,data_final,produto, num_postos_pesquisados, unid_medida, preco_medio_revenda, desvio_padrao_revenda, preco_minimo_revenda, preco_maximo_revenda, margem_media_revenda, coef_var_revenda, preco_medio_dist, desvio_padrao_dist, preco_min_dist, preco_max_dist) values "+ valores +";"
-            # print(query)
-            session.execute(query)
                 
             
         # CONEXAO COM SPARK
