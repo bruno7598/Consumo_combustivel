@@ -21,4 +21,4 @@ Ao final cada equipe deve enviar:
 
 
 Foi realizada a análise de preço de compra e venda em postos de combustíveis no Brasil - 
-Dados da ANP - https://dados.gov.br/dataset/serie-historica-de-precos-de-combustiveis-por-revenda
+Dados de combustíveis automotivos da ANP - https://dados.gov.br/dataset/serie-historica-de-precos-de-combustiveis-por-revenda
