@@ -10,26 +10,7 @@ caminho_parquet = "gs://arquivo_parquet"
 
 
 if __name__ == "__main__":
-    try:
-        # CONEXAO COM O MYSQL
-        con = mysql.connector.connect(user='root', password='projetoNatal', host='10.6.208.3', database='consumo_combustivel')
-        cursor = con.cursor()
-        
-        # SELECT NA PLANILHA E SALVA COMO DATAFRAME COM PANDAS
-        query = "SELECT * FROM preco_combustiveis;"
-        query = cursor.execute(query)
-        query = cursor.fetchall()
-        df_preco = pd.DataFrame(query)
-        
-        print(df_preco)
-        
-        df_preco.columns = ["cod_pla","data_inicial","data_final","produto", "num_postos_pesquisados", "unid_medida", "preco_medio_revenda", "desvio_padrao_revenda", "preco_minimo_revenda", "preco_maximo_revenda", "margem_media_revenda", "coef_var_revenda", "preco_medio_dist", "desvio_padrao_dist", "preco_min_dist", "preco_max_dist"]
-        
-        print("colunas ok")
-        cursor.close()
-        con.commit()
-        con.close()
-            
+    try:           
         # CONEXAO COM CASSANDRA
         clstr = Cluster(['34.151.227.87'], port=9042)
         session = clstr.connect('analise_combustivel')
